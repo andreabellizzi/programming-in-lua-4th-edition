@@ -52,3 +52,12 @@ function permute(solutions, perm, n)
         end
     end
 end
+
+function benchmark(func, iter, ...)
+    local start_time = os.clock()
+    for i = 1, iter do
+        func(...)
+    end
+    local end_time = os.clock()
+    print("Elapsed avg time="..(end_time-start_time)/iter.." seconds")
+end

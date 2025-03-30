@@ -47,7 +47,7 @@ function myconcat(list_of_strings)
     return s
 end
 
-function banchmark(func, iter, ...)
+function benchmark(func, iter, ...)
     local start_time = os.clock()
     for i = 1, iter do
         func(...)
@@ -105,8 +105,8 @@ function exercise()
     for i=1,1000 do
         long_list_of_string[i] = 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa'
     end
-    banchmark(myconcat, 100, long_list_of_string)
-    banchmark(table.concat, 100, long_list_of_string)
+    benchmark(myconcat, 100, long_list_of_string)
+    benchmark(table.concat, 100, long_list_of_string)
 
 end
 

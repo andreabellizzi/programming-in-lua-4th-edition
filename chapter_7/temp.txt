@@ -1,0 +1,6 @@
+try
+line
+boh
+foo
+hello world
+a fox in a forest
