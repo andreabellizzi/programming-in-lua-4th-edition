@@ -103,12 +103,19 @@ function exercise_7_4(n)
 end
 
 function mkdir(path)
+    os.execute("mkdir "..path)
 end
 
 function rmdir(path)
+    os.execute("rmdir /s /q "..path)
 end
 
 function list_dir(path)
+    local open_stream = io.popen("dir /B "..path, 'r')
+    print('content directory:')
+    for line in open_stream:lines() do
+        print(line)
+    end
 end
 
 
@@ -153,11 +160,17 @@ function exercise()
     exercise_7_4(2)
 
     print("START EX7.6")
+    mkdir('chapter_7\\tmp')
+    list_dir('chapter_7')
+    rmdir('chapter_7\\tmp')
 --  Exercise 7.6: Using os.execute and io.popen, write functions to create a directory, to remove a
 --  directory, and to collect the entries in a directory.
     
     print("START EX7.7")
 --  Exercise 7.7: Can you use os.execute to change the current directory of your Lua script? Why?
+-- because the command is executed in another process
+    os.execute('cd chapter_7')
+    list_dir('.')
 end
 
 
