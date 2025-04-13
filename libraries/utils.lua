@@ -61,3 +61,12 @@ function benchmark(func, iter, ...)
     local end_time = os.clock()
     print("Elapsed avg time="..(end_time-start_time)/iter.." seconds")
 end
+
+
+function split(astring, pattern)
+    -- Exercise 10.1: Write a function split that receives a string and a delimiter pattern and returns a sequence
+    --     with the chunks in the original string separated by the delimiter:
+    --          t = split("a whole new world", " ")
+    --          -- t = {"a", "whole", "new", "world"}
+    return string.gmatch(astring, "[^"..pattern.."]*")
+end
