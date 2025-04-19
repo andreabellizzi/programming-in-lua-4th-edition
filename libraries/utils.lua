@@ -70,3 +70,7 @@ function split(astring, pattern)
     --          -- t = {"a", "whole", "new", "world"}
     return string.gmatch(astring, "[^"..pattern.."]*")
 end
+
+function mkdir(path)
+    os.execute("mkdir "..path)
+end
