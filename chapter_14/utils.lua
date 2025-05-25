@@ -33,7 +33,7 @@ function popLast (list)
     local value = list[last]
     list[last] = nil         -- to allow garbage collection
     list.last = last - 1
-    if first > list.last then 
+    if list.first > list.last then 
         list.first = 0
         list.last = -1
     end
